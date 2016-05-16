@@ -34,6 +34,7 @@ PLUSMINUS="\u00b1"
 BRANCH="\ue0a0"
 DETACHED="\u27a6"
 CROSS="\u2718"
+CHECKMARK="\u2713"
 LIGHTNING="\u26a1"
 GEAR="\u2699"
 
@@ -114,20 +115,22 @@ prompt_status() {
   local symbols
   symbols=()
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}$CROSS"
+  [[ $RETVAL -eq 0 ]] && symbols+="%{%F{green}%}$CHECKMARK"
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}$LIGHTNING"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$GEAR"
 
-  [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
+  [[ -n "$symbols" ]] && print -n "\n" && prompt_segment $PRIMARY_FG default " $symbols "
 }
 
 ## Main prompt
 prompt_agnoster_main() {
   RETVAL=$?
   CURRENT_BG='NONE'
-  prompt_status
   prompt_context
   prompt_dir
   prompt_git
+  prompt_end
+  prompt_status
   prompt_end
 }
 
