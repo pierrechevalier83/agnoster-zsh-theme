@@ -14,7 +14,7 @@ For Mac users, I highly recommend iTerm 2 + Solarized Dark
 
 To test if your terminal and font support it, check that all the necessary characters are supported by copying the following command to your terminal: `echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u2713 \u26a1 \u2699"`. The result should look like this:
 
-![Character Example](https://gist.githubusercontent.com/pierrechevalier83/agnoster-zsh-theme/master/raw/characters.png)
+![Character Example](https://raw.githubusercontent.com/pierrechevalier83/agnoster-zsh-theme/master/characters.png)
 
 ## What does it show?
 
