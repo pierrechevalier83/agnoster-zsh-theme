@@ -33,8 +33,8 @@ SEGMENT_SEPARATOR="\ue0b0"
 PLUSMINUS="\u00b1"
 BRANCH="\ue0a0"
 DETACHED="\u27a6"
-CROSS="\u2718"
-CHECKMARK="\u2713"
+ERROR="😝"
+SUCCES="😃"
 LIGHTNING="\u26a1"
 GEAR="\u2699"
 
@@ -114,8 +114,8 @@ prompt_dir() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}$CROSS"
-  [[ $RETVAL -eq 0 ]] && symbols+="%{%F{green}%}$CHECKMARK"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}$ERROR"
+  [[ $RETVAL -eq 0 ]] && symbols+="%{%F{green}%}$SUCCES"
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}$LIGHTNING"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$GEAR"
 

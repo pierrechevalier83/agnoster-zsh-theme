@@ -24,7 +24,7 @@ To test if your terminal and font support it, check that all the necessary chara
   - Current branch / SHA1 in detached head state
   - Dirty working directory (±, color change)
 - Working directory
-- If the previous command failed (✘), else (✓)
+- If the previous command failed (😝), else (😃)
 - Elevated (root) privileges (⚡)
 
 ![Screenshot](https://raw.githubusercontent.com/pierrechevalier83/agnoster-zsh-theme/master/screenshot.png)
